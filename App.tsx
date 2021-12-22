@@ -7,9 +7,11 @@ import {
   Rajdhani_700Bold
 } from '@expo-google-fonts/rajdhani'
 import AppLoading from 'expo-app-loading'
-import { SignIn } from './src/screens/SignIn'
 import { Background } from './src/components/Background'
-import { Home } from './src/screens/Home'
+
+import { SignIn } from './src/screens/SignIn'
+
+import { Routes } from './src/Routes'
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -22,7 +24,7 @@ export default function App() {
   if (!fontsLoaded) {
     return <AppLoading />
   }
-
+  //segunda aula 1:10 com b.o
   return (
     <Background>
       <StatusBar
@@ -30,7 +32,7 @@ export default function App() {
         backgroundColor="transparent"
         translucent
       />
-      <Home />
+      <SignIn />
     </Background>
   )
 }
