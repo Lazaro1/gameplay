@@ -8,10 +8,10 @@ export const styles = StyleSheet.create({
   },
   header: {
     width: '100%',
-    padding: 24,
+    paddingHorizontal: 24,
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginTop: getStatusBarHeight() + 26,
-    marginBottom: 42
+    marginBottom: 42,
   }
 })

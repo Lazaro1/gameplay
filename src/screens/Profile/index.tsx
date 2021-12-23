@@ -2,6 +2,7 @@ import React from 'react'
 import { Text, View } from 'react-native'
 
 import { Avatar } from '../../components/Avatar'
+import { Category } from '../../components/Category'
 
 import { styles } from './styles'
 
