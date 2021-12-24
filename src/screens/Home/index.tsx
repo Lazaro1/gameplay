@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Text, View } from 'react-native'
 import { ButtonAdd } from '../../components/ButtonAdd'
 import { CategorySelect } from '../../components/CategorySelect'
-//teste
+
 import { Profile } from '../Profile'
 import { styles } from './styles'
 
