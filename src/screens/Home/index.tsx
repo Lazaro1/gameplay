@@ -51,12 +51,17 @@ export function Home() {
   const handleAppointmentDetails = () => {
     navigation.navigate('AppointmentsDetails')
   }
+
+  const handleAppointmentCreate = () => {
+    navigation.navigate('AppointmentsCreate')
+  }
+
   return (
     <Background>
       <View style={styles.container}>
         <View style={styles.header}>
           <Profile />
-          <ButtonAdd />
+          <ButtonAdd onPress={handleAppointmentCreate} />
         </View>
         <CategorySelect
           categorySelected={category}
