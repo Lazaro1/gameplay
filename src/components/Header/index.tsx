@@ -4,6 +4,7 @@ import { LinearGradient } from 'expo-linear-gradient'
 import { BorderlessButton } from 'react-native-gesture-handler'
 
 import { Feather } from '@expo/vector-icons'
+import { Fontisto } from '@expo/vector-icons'
 
 import { styles } from './styles'
 import { theme } from '../../global/styles/theme'
@@ -30,7 +31,13 @@ export function Header({ title, action }: Props) {
         <Feather name="arrow-left" size={24} color={heading} />
       </BorderlessButton>
       <Text style={styles.title}>{title}</Text>
-      {action && <View> {action} </View>}
+      {action ? (
+        <BorderlessButton>
+          <Fontisto name="share" size={24} color={theme.colors.primary} />
+        </BorderlessButton>
+      ) : (
+        console.log('é falso')
+      )}
     </LinearGradient>
   )
 }

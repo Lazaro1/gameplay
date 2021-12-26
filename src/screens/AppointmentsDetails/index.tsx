@@ -1,14 +1,34 @@
 import { useState } from 'react'
-import { View, Text, Image, StatusBar } from 'react-native'
+import { View, Text, ImageBackground, FlatList } from 'react-native'
 import { Background } from '../../components/Background'
 import { Header } from '../../components/Header'
 import { BorderlessButton } from 'react-native-gesture-handler'
 import { Fontisto } from '@expo/vector-icons'
 
+import BannerImg from '../../assets/banner.png'
 import { styles } from './styles'
 import { theme } from '../../global/styles/theme'
+import { ListHeader } from '../../components/ListHeader'
+import { Member } from '../../components/Member'
+import { ListDivider } from '../../components/ListDivider'
+import { ButtonIcon } from '../../components/ButtonIcon'
 
 export function AppointmentsDetails() {
+  const menbers = [
+    {
+      id: '1',
+      username: 'Lázaro',
+      avatar_url: 'https://github.com/Lazaro1.png',
+      status: 'online'
+    },
+    {
+      id: '2',
+      username: 'Rodrigo',
+      avatar_url: 'https://github.com/Lazaro1.png',
+      status: 'Offline'
+    }
+  ]
+
   return (
     <Background>
       <Header
@@ -19,6 +39,28 @@ export function AppointmentsDetails() {
           </BorderlessButton>
         }
       />
+
+      <ImageBackground source={BannerImg} style={styles.banner}>
+        <View style={styles.bannerContent}>
+          <Text style={styles.title}> Lendários </Text>
+          <Text style={styles.subtitle}>
+            {' '}
+            É hoje que vamos chegar ao challenger sem perder uma partida da md10{' '}
+          </Text>
+        </View>
+      </ImageBackground>
+      <ListHeader title="Jogadores" subtitle="Total 3" />
+
+      <FlatList
+        style={styles.members}
+        data={menbers}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => <Member data={item} />}
+        ItemSeparatorComponent={() => <ListDivider />}
+      />
+      <View style={styles.footer}>
+        <ButtonIcon title="Entrar na partida" />
+      </View>
     </Background>
   )
 }
