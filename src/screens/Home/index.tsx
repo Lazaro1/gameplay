@@ -68,8 +68,9 @@ export function Home() {
           setCategory={handleCategorySelect}
           hasCheckBox={true}
         />
-        <View style={styles.content}></View>
-        <ListHeader title="Partidas agendadas" subtitle="Total 6" />
+        <View>
+          <ListHeader title="Partidas agendadas" subtitle="Total 6" />
+        </View>
 
         <FlatList
           data={appointments}
@@ -78,6 +79,7 @@ export function Home() {
             <Appointments data={item} onPress={handleAppointmentDetails} />
           )}
           ItemSeparatorComponent={() => <ListDivider />}
+          contentContainerStyle={{ paddingBottom: 69 }}
           style={styles.matches}
           showsVerticalScrollIndicator={false}
         />
