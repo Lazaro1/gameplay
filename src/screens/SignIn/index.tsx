@@ -9,13 +9,13 @@ import { Background } from '../../components/Background'
 import { useAuth } from '../../hooks/auth'
 
 export function SignIn() {
-  const { user, SignIn } = useAuth()
+  const { user, SignIn, loading } = useAuth()
 
   const handleSignIn = async () => {
     try {
       await SignIn()
     } catch (error) {
-      Alert.alert('error')
+      Alert.alert('Error:', error.message)
     }
   }
 
