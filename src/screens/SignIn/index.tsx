@@ -16,6 +16,7 @@ import { Background } from '../../components/Background'
 import { useAuth } from '../../hooks/auth'
 import { theme } from '../../global/styles/theme'
 import { ButtonAdd } from '../../components/ButtonAdd'
+import { ButtonIcon2 } from '../../components/ButtonIcon2'
 
 export function SignIn() {
   const { user, SignIn, loading } = useAuth()
@@ -50,7 +51,7 @@ export function SignIn() {
           {loading ? (
             <ActivityIndicator color={theme.colors.primary} />
           ) : (
-            <ButtonIcon title="Entrar com Discord" onPress={handleSignIn} />
+            <ButtonIcon2 title="Entrar com Discord" onPress={handleSignIn} />
           )}
         </View>
       </View>
